@@ -12,7 +12,6 @@ import {BsGlobe} from "react-icons/bs";
 import {Platform} from "../../hooks/useGames.ts";
 import {HStack, Icon} from "@chakra-ui/react";
 import {IconType} from "react-icons";
-import usePlatforms from "../../hooks/usePlatforms.ts";
 
 
 interface Props {

@@ -1,7 +1,7 @@
 import useData from "./useData.ts";
 
 
-interface Platfrom {
+export interface Platfrom {
     id: number;
     name: string;
     slug: string;
