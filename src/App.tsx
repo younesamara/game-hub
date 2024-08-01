@@ -1,6 +1,5 @@
 import {Box, Flex, Grid, GridItem, Show} from "@chakra-ui/react";
-import {NavBar} from "@core";
-import {GameGrid} from "./core";
+import {GameGrid, NavBar} from "./core";
 import GenreList from "./core/components/GenreList.tsx";
 import {useState} from "react";
 import {Genre} from "./hooks/useGenres.ts";
@@ -13,6 +12,7 @@ export interface GameQuery {
     genre: Genre | null;
     platform: Platform | null;
     sortOrder: string;
+    searchText: string;
 }
 
 
@@ -30,7 +30,7 @@ function App() {
               }}
         >
             <GridItem area="nav">
-                <NavBar/>
+                <NavBar onSearch={(searchText) => setGameQuery({...gameQuery, searchText})}/>
             </GridItem>
             <Show above="lg">
                 <GridItem area="aside" paddingY={5}>
