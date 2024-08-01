@@ -6,6 +6,7 @@ import {Genre} from "./hooks/useGenres.ts";
 import PlatformSelector from "./core/components/PlatformSelector.tsx";
 import {Platform} from "./hooks/useGames.ts";
 import SortSelector from "./core/components/SortSelector.tsx";
+import GameHeading from "./core/components/GameHeading.tsx";
 
 
 export interface GameQuery {
@@ -39,15 +40,17 @@ function App() {
                 </GridItem>
             </Show>
             <GridItem area="main">
-                <Flex paddingLeft={2} marginBottom={5}>
-                    <Box marginRight={5}>
-                        <PlatformSelector selectedPlatform={gameQuery.platform}
-                                          onSelectPlatform={(platform) => setGameQuery({...gameQuery, platform})}/>
-                    </Box>
-                    <SortSelector sortOrder={gameQuery.sortOrder}
-                                  onSelectSortOrder={(sortOrder) => setGameQuery({...gameQuery, sortOrder})}/>
-
-                </Flex>
+                <Box paddingY={2}>
+                    <GameHeading gameQuery={gameQuery}/>
+                    <Flex paddingLeft={2} marginBottom={5}>
+                        <Box marginRight={5}>
+                            <PlatformSelector selectedPlatform={gameQuery.platform}
+                                              onSelectPlatform={(platform) => setGameQuery({...gameQuery, platform})}/>
+                        </Box>
+                        <SortSelector sortOrder={gameQuery.sortOrder}
+                                      onSelectSortOrder={(sortOrder) => setGameQuery({...gameQuery, sortOrder})}/>
+                    </Flex>
+                </Box>
                 <GameGrid gameQuery={gameQuery}/>
             </GridItem>
 
