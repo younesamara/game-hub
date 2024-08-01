@@ -6,6 +6,7 @@ export interface Game {
     id: number;
     name: string;
     background_image: string;
+    parent_platforms: { platform: Platform }[]
 }
 
 interface FetchGamesResponse {
@@ -13,6 +14,12 @@ interface FetchGamesResponse {
     result: Game[];
 }
 
+export interface Platform {
+
+    id: number;
+    name: string;
+    slug: string;
+}
 
 function useGames() {
 
@@ -34,7 +41,6 @@ function useGames() {
                 }
             );
 
-        return () => controller.abort();
 
     }, [])
 
