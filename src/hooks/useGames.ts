@@ -1,13 +1,13 @@
 import useData from "./useData.ts";
-import {Genre} from "./useGenres.ts";
 import {GameQuery} from "../App.tsx";
 
 export interface Game {
     id: number;
     name: string;
     background_image: string;
-    parent_platforms: { platform: Platform }[],
-    metacritic: number,
+    parent_platforms: { platform: Platform }[];
+    metacritic: number;
+    rating_top: number;
 }
 
 export interface Platform {
