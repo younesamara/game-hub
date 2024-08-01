@@ -29,7 +29,7 @@ function PlatformIconList({platforms}: Props) {
         mac: FaApple,
         ios: MdPhoneIphone,
         web: BsGlobe,
-        Linux: FaLinux,
+        linux: FaLinux,
         android: FaAndroid,
 
     }
