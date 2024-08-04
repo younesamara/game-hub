@@ -17,8 +17,7 @@ const SortSelector = ({onSelectSortOrder, sortOrder}: Props) => {
         {value: '-released', label: 'Release date'},
         {value: '-metacritic', label: 'Popularity'},
         {value: '-rating', label: 'Average rating'}
-
-    ]
+    ];
 
     const currentSortOrder = sortOrders.find(order => order.value === sortOrder);
 
@@ -29,7 +28,7 @@ const SortSelector = ({onSelectSortOrder, sortOrder}: Props) => {
             </MenuButton>
             <MenuList>
                 {sortOrders.map(order => (
-                    <MenuItem onClick={() => onSelectSortOrder(order)} value={order.value}
+                    <MenuItem onClick={() => onSelectSortOrder(order.value)} value={order.value}
                               key={order.value}>{order.label}</MenuItem>))}
             </MenuList>
         </Menu>
